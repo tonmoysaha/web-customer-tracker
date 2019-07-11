@@ -24,7 +24,7 @@ public class CustomerDAOIml implements CustomerDAO<Customer> {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
 		
-		Query<Customer> theQuery = session.createQuery("from customer", Customer.class);
+		Query<Customer> theQuery = session.createQuery("from Customer", Customer.class);
 		
 		List<Customer> customers = theQuery.getResultList();
 		
