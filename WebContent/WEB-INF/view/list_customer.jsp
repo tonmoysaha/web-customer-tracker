@@ -11,12 +11,15 @@
 <body>
 	<div id="header">
 		<div id="headercontent"></div>
-		<h2>Customer Relationship Managment</h2>
+		<h2>Customer Relationship Manager</h2>
 	</div>
 
 	<div id="container">
 	<h3></h3>
 		<div id="content">
+		
+		<input type="button" value="Add Customer" onclick="window.location.href='AddFromShow'; return false;"
+		class="add-button">
 		<table>
 		<tr>
 		<th>ID</th>
