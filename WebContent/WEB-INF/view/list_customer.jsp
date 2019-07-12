@@ -40,7 +40,8 @@
 		<td>${customer.lastName}</td>
 		<td>${customer.email}</td>
 		<td><a href="showFormForUpdate?customerId=${customer.id}">Update</a> |
-		<a href="delete_customer?customerId=${customer.id}">Delete</a></td>
+		<a href="delete_customer?customerId=${customer.id}" 
+		onclick="if(!(confirm('are you sure you want to delete it?'))) return false">Delete</a></td>
 		</tr>
 		
 		</c:forEach>

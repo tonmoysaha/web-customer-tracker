@@ -47,4 +47,13 @@ public class CustomerDAOIml implements CustomerDAO<Customer> {
 		return customer;
 	}
 
+	@Override
+	public void deleteCustomer(int customerId) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		Query theQuery = session.createQuery("delete from Customer c where c.id = :customerId");
+		theQuery.setParameter("customerId", customerId);
+		theQuery.executeUpdate();
+	}
+
 }
