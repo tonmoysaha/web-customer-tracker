@@ -20,7 +20,7 @@ public class CustomerServiceImpl implements CustomerService {
 	@Transactional
 	public List<Customer> getCustomers() {
 		// TODO Auto-generated method stub
-		return customerDAO.getCustomer();
+		return customerDAO.getCustomers();
 	}
 
 	@Override
@@ -28,6 +28,13 @@ public class CustomerServiceImpl implements CustomerService {
 	public void saveCustomer(Customer theCustomer) {
 		 customerDAO.saveCustomer(theCustomer);
 		
+	}
+
+	@Override
+	@Transactional
+	public Customer getCustomer(int customerId) {
+		// TODO Auto-generated method stub
+		return customerDAO.getCustomer(customerId);
 	}
 
 }

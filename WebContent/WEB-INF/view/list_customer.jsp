@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>List Customer</title>
-<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/style.css">
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
 	<div id="header">
@@ -26,13 +26,21 @@
 		<th>Frist Name</th>
 		<th>Lasty Name</th>
 		<th>Email</th>
+		<th>Action</th>
 		</tr>
 		<c:forEach items="${customers}" var="customer">
+		
+		<!--<c:url var="updatelink" value="/customer/showFormForUpdate">
+		<c:param name="customerId" value="${customer.id}"></c:param>
+		</c:url>-->
+		
 		<tr>
 		<td>${customer.id}</td>
 		<td>${customer.fristName}</td>
 		<td>${customer.lastName}</td>
 		<td>${customer.email}</td>
+		<td><a href="showFormForUpdate?customerId=${customer.id}">Update</a> |
+		<a href="delete_customer?customerId=${customer.id}">Delete</a></td>
 		</tr>
 		
 		</c:forEach>

@@ -19,7 +19,7 @@ public class CustomerDAOIml implements CustomerDAO<Customer> {
 	private SessionFactory sessionFactory;
 
 	@Override
-	public List<Customer> getCustomer() {
+	public List<Customer> getCustomers() {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
 		
@@ -35,8 +35,16 @@ public class CustomerDAOIml implements CustomerDAO<Customer> {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
 		
-		session.save(theCustomer);
+		session.saveOrUpdate(theCustomer);
 		
+	}
+
+	@Override
+	public Customer getCustomer(int customerId) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		Customer customer = session.get(Customer.class, customerId);
+		return customer;
 	}
 
 }

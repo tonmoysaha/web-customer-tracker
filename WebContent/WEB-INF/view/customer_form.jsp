@@ -6,20 +6,24 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Customer Registration</title>
-<link type="text/css" rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/addcustomer-style.css">
-	
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/addcustomer.css">
 </head>
 <body>
 	<div id="header">
-		<div id="headercontent"></div>
+		<div id="headercontent">
 		<h2>Customer Relationship Manager</h2>
+		</div>
 	</div>
 
 	<div id="container">
-		<h3>Customer Registration</h3>
+	   <div align="center">
+		<h2>Customer Registration</h2>
+		</div>
+		<div align="center">
+		
 		<form:form action="create_customer" modelAttribute="customer"
 			method="POST">
+			<form:hidden path="id"/>
 
 			<table>
 				<tbody>
@@ -33,9 +37,12 @@
 					</tr>
 					<tr>
 						<td><label>Enter Email:</label></td>
-						<td><input type="text" name="email" size="45"></td>
+						<td>
+						<form:input path="email"/>
+						</td>
 					</tr>
 					<tr>
+					<td><label></label></td>
 						<td><input type="submit" value="Save" class="save"></td>
 					</tr>
 
@@ -47,7 +54,9 @@
 			<a href="${pageContext.request.contextPath}/customer/list">Back
 				to List</a>
 		</p>
-	</div>
+		</div>
+		</div>
+	
 
 </body>
 </html>
